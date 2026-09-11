@@ -9,11 +9,20 @@ import EditarProdutos from './routes/EditarProdutos/index.tsx';
 import Error from './routes/Error/index.tsx';
 
 const router = createBrowserRouter([
+<<<<<<< HEAD
   {path:'/', element: <App/>, errorElement: <Error/>, children:[
     {path: '/', element: <Home/>},
     {path:'/produtos',element:<Produtos/>},
     {path:'/editar-produtos', element:<EditarProdutos/>},
   ]},
+=======
+  {path: '/', element: <App />, errorElement: <Error />, children: [
+    {path: '/', element: <Home />},
+    {path: '/produtos', element: <Produtos />},
+    {path: '/editar-produtos', element: <EditarProdutos />}
+
+]},
+>>>>>>> 542d2a1ae7a5b20b1af3a41b819011948fbb0fae
 
 ]);
 
