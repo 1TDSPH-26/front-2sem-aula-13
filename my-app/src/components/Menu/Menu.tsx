@@ -10,9 +10,6 @@ export default function Menu(){
                 <li>
                     <Link to="/produtos">Produtos</Link>
                 </li>
-                <li>
-                    <Link to="/editar-produtos">Editar Produtos</Link>
-                </li>
             </ul>
         </nav>
         
