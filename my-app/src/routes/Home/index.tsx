@@ -5,9 +5,14 @@ export default function Home() {
 
   const [clicado, setClicado] = useState<number>(0);
 
-  useEffect( ()=>{ 
-    console.log("Um milhão de linhas sendo carregada", clicado);
-  },[] );
+  let chamadas: Number = 0;
+
+useEffect( ()=>{
+
+    console.log("Um milhão de linhas sendo carregada", chamadas);
+    chamadas++;
+
+},[clicado] );
 
   return (
     <main>
