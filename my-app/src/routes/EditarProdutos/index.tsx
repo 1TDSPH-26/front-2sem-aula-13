@@ -1,35 +1,49 @@
-<<<<<<< HEAD
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
+const listaProdutos = [
 
-export default function EditarProdutos(){
-    return(
-        <main>
-            <h2>Editar Produtos</h2>
-        </main>
-    )
-}
-=======
-<<<<<<< HEAD
+  {id: 1, nome: "Produto-1", preco: 23.90 },
+  {id: 2, nome: "Produto-2", preco: 99.10 },
+  {id: 3, nome: "Produto-3", preco: 132.40 },
+];
 
 export default function EditarProdutos() {
-
   document.title = "Editar Produtos";
+
+  const { id } = useParams<{id:string}>();
+
+  const [produto, setProduto] = useState<{ id: number, nome: string, preco: number }>({} as { id: number, nome: string, preco: number });
+
+  useEffect( ()=> {
+
+    const produtoEncontrado = listaProdutos.find( (p)=> p.id ===  Number(id) );
+
+    setProduto(produtoEncontrado!);
+
+  },[]);
+
+
 
   return (
     <main>
         <h2>Editar Produtos</h2>
+        <p>ID : {id}</p>
+
+        <div>
+
+        {produto ?
+          (
+          <div>
+            <p>Nome : {produto.nome}</p>
+            <p>Preço: {produto.preco}</p>
+          </div>
+          ):
+          (<p>Produto não encontrado!</p>)
+         }
+
+        </div>
+
     </main>
   )
 }
-=======
-export default function EditarProdutos() {
-
-    document.title = "Editar Produtos";
-  return (
-    <main>
-      <h2>Página Inicial (EditarProdutos)</h2>
-    </main>
-  );
-}
->>>>>>> 542d2a1ae7a5b20b1af3a41b819011948fbb0fae
->>>>>>> 47448d4cbe13338020d2a53559da0250d9f6519a
